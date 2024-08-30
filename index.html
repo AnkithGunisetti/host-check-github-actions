@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadrant Layout with Duplicate Data</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            grid-template-rows: 1fr 1fr; /* Two rows */
+            gap: 10px; /* Adjust as needed */
+            width: 80%;
+            height: 90vh; /* Full viewport height */
+margin-left:10%;
+margin-top: 5vh;
+        }
+
+        /* First Quadrant (Top-left) - Image and Table */
+        .first-quadrant {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+            display: grid;
+            grid-template-rows: 2fr 1fr; /* Image takes twice the space of the table */
+            gap: 10px; /* Adjust as needed */
+        }
+
+        .image-section {
+            background-image: url('https://via.placeholder.com/400x300'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+            grid-row: 1 / 2; /* Image in the first row of the first quadrant */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .bottom-table {
+            background-color: #b0b0b0; /* Placeholder color */
+            grid-row: 2 / 3; /* Table in the second row of the first quadrant */
+            padding: 10px;
+        }
+
+        /* Second Quadrant (Top-right) - Graph */
+        .graph {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            background-color: #f0f0f0; /* Placeholder color */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Third Quadrant (Bottom-left) - Table */
+        .table1 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            background-color: #d0d0d0; /* Placeholder color */
+            padding: 10px;
+        }
+
+        /* Fourth Quadrant (Bottom-right) - Reserved or Empty */
+        .fourth-quadrant {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            background-color: #e0e0e0; /* Placeholder color */
+            padding: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Single column layout for small screens */
+                grid-template-rows: auto auto auto auto; /* Adjust rows */
+            }
+
+            .first-quadrant {
+                grid-column: 1;
+                grid-row: 1;
+                grid-template-rows: 1fr 1fr; /* Adjust for smaller screens */
+            }
+
+            .image-section {
+                grid-row: 1;
+            }
+
+            .bottom-table {
+                grid-row: 2;
+            }
+
+            .graph {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .table1 {
+                grid-column: 1;
+                grid-row: 3;
+            }
+
+            .fourth-quadrant {
+                grid-column: 1;
+                grid-row: 4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first-quadrant">
+            <div class="image-section">Image 1</div>
+            <div class="bottom-table">
+           
+            </div>
+        </div>
+        <div class="graph">
+            <img src="https://via.placeholder.com/300x200" alt="Graph" style="width: 100%; height: auto;">
+        </div>
+        <div class="table1">
+            
+        </div>
+        <div class="fourth-quadrant">
+           
+        </div>
+    </div>
+</body>
+</html>
